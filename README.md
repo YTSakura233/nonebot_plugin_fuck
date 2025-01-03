@@ -43,20 +43,15 @@ random = #默认0.10(1%)
 
 ## 安装
 
-1. 使用 nb-cli 安装，不需要手动添加入口，更新使用 pip (推荐)
+
+1. 使用 pip 安装和更新，初次安装需要手动添加入口 （新版默认不带 bot.py 文件）
 
 ```
-nb plugin install nonebot_plugin_analysis_bilibili
-```
-
-2. 使用 pip 安装和更新，初次安装需要手动添加入口 （新版默认不带 bot.py 文件）
-
-```
-pip install --upgrade nonebot_plugin_analysis_bilibili
+pip install --upgrade nonebot_plugin_fuck
 ```
 
 pip 安装后在 Nonebot2 入口文件（例如 bot.py ）增加：
 
 ```python
-nonebot.load_plugin("nonebot_plugin_analysis_bilibili")
+nonebot.load_plugin("nonebot_plugin_fick")
 ```
