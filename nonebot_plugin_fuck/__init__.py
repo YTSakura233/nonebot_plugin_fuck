@@ -43,7 +43,7 @@ def get_word():
     word = random.choice(fuck_words)
     if "xxx" in word:
         word.replace('xxx', '你')
-    return random.choice(word)
+    return word
 
 @fuck.handle()
 async def _(event: GroupMessageEvent, message: Message = EventMessage()):
