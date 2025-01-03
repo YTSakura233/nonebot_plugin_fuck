@@ -26,7 +26,7 @@ _✨ NoneBot 机器人攻击群友插件 ✨_
 * 发送“骂我”，直接被机器人骂
 * 发送“插入脏话XXX”可向文件中插入脏话
 
-## 额外配置项(可选)
+## 额外配置项
 
 在配置文件中加入(需要什么加什么)
 
@@ -55,3 +55,7 @@ pip 安装后在 Nonebot2 入口文件（例如 bot.py ）增加：
 ```python
 nonebot.load_plugin("nonebot_plugin_fuck")
 ```
+
+## TODO-LIST
+
+* 增加“骂他”功能
