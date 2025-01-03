@@ -75,5 +75,5 @@ async def _(event: GroupMessageEvent, message: Message = CommandArg()):
                 f.close()
             await insert.send([MessageSegment.reply(event.message_id), MessageSegment.text("插入成功")])
         except Exception as e:
-            await insert.send([MessageSegment.reply(event.message_id), MessageSegment.text(f"插入成功:{e}")])
+            await insert.send([MessageSegment.reply(event.message_id), MessageSegment.text(f"插入失败，请联系机修:{e}")])
 
