@@ -53,5 +53,5 @@ pip install --upgrade nonebot_plugin_fuck
 pip 安装后在 Nonebot2 入口文件（例如 bot.py ）增加：
 
 ```python
-nonebot.load_plugin("nonebot_plugin_fick")
+nonebot.load_plugin("nonebot_plugin_fuck")
 ```
