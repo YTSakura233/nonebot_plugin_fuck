@@ -14,7 +14,7 @@ RANDOM = getattr(config, 'random', 0.10)
 def active() -> bool:
     return True if FUCK else False
 
-FUCK_PATH = "./text.txt"
+FUCK_PATH = "text.txt"
 
 fuck = on_regex(r"[\s\S]*", priority=20, rule=active)
 fuck1 = on_command("骂我", priority=20, rule=active)
