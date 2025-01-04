@@ -1,7 +1,8 @@
 import nonebot
+import re
 from nonebot import on_command, on_regex
 from nonebot.adapters.onebot.v11 import GroupMessageEvent, Message, MessageSegment
-from nonebot.params import EventMessage, CommandArg, EventToMe
+from nonebot.params import EventMessage, CommandArg
 
 import random
 
