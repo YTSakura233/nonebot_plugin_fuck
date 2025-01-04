@@ -38,6 +38,8 @@ fuck = true # 默认为False
 fuck_user = [''] 
 # 开启群组
 fuck_group = []
+# 免骂用户
+fuck_white = ['']
 # 随机概率
 random = #默认0.10(1%)
 ```
@@ -60,3 +62,4 @@ nonebot.load_plugin("nonebot_plugin_fuck")
 ## TODO-LIST
 
 - [x] 增加“骂他”功能
+- [x] 增加“免骂”功能

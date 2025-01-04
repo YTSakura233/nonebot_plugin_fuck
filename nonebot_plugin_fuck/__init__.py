@@ -10,6 +10,7 @@ config = nonebot.get_driver().config
 FUCK = getattr(config, 'fuck', False)
 FUCK_USER = getattr(config, 'fuck_user', [''])
 FUCK_GROUP = getattr(config, 'fuck_group', [])
+FUCK_WHITE = getattr(config, 'fuck_white', [''])
 RANDOM = getattr(config, 'random', 0.10)
 
 def active() -> bool:
@@ -49,7 +50,7 @@ def get_word():
 
 @fuck.handle()
 async def _(event: GroupMessageEvent, message: Message = EventMessage()):
-    if event.group_id in FUCK_GROUP:
+    if event.group_id in FUCK_GROUP and event.get_user_id() not in FUCK_WHITE:
         if event.get_user_id() in FUCK_USER:
             await fuck.send([MessageSegment.reply(event.message_id), MessageSegment.text(get_word())])
         elif event.is_tome():
@@ -71,7 +72,10 @@ async def _(event: GroupMessageEvent, message: Message = CommandArg()):
     if event.group_id in FUCK_GROUP:
         a = str(message)
         qq = re.search(r"qq=(\d+)", a).group(1)
-        await fuck2.send([MessageSegment.at(qq), MessageSegment.text(f"{get_word()}")])
+        if str(qq) in FUCK_WHITE:
+            await fuck2.send([MessageSegment.reply(event.message_id), MessageSegment.text("不能骂此人哟")])
+        else:
+            await fuck2.send([MessageSegment.at(qq), MessageSegment.text(f"{get_word()}")])
 
 @insert.handle()
 async def _(event: GroupMessageEvent, message: Message = CommandArg()):
