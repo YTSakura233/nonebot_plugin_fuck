@@ -14,10 +14,11 @@ RANDOM = getattr(config, 'random', 0.10)
 def active() -> bool:
     return True if FUCK else False
 
-FUCK_PATH = "text.txt"
+FUCK_PATH = "./text.txt"
 
 fuck = on_regex(r"[\s\S]*", priority=20, rule=active)
 fuck1 = on_command("骂我", priority=20, rule=active)
+fuck2 = on_command('骂他', aliases={'骂她', '骂它'}, priority=20, rule=active)
 insert = on_command("插入脏话", priority=20, rule=active)
 
 # 进行随机
@@ -63,6 +64,13 @@ async def _(event: GroupMessageEvent, message: Message = EventMessage()):
 async def _(event: GroupMessageEvent, message: Message = EventMessage()):
     if event.group_id in FUCK_GROUP:
         await fuck1.send([MessageSegment.reply(event.message_id), MessageSegment.text(get_word())])
+
+@fuck2.handle()
+async def _(event: GroupMessageEvent, message: Message = CommandArg()):
+    if event.group_id in FUCK_GROUP:
+        a = str(message)
+        qq = re.search(r"qq=(\d+)", a).group(1)
+        await fuck2.send([MessageSegment.at(qq), MessageSegment.text(f"{get_word()}")])
 
 @insert.handle()
 async def _(event: GroupMessageEvent, message: Message = CommandArg()):

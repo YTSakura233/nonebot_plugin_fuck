@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot_plugin_fuck"
-version = "1.0.2"
+version = "1.1.0"
 description = "NoneBot 机器人攻击群友插件"
 authors = ["YTSakura"]
 license = "MIT"
