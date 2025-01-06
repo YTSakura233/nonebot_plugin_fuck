@@ -6,7 +6,8 @@
 
 # nonebot_plugin_fuck
 
-_✨ NoneBot 机器人攻击群友插件 ✨_
+_✨ NoneBot 机器人攻击群友插件 ✨_<br>
+_(本插件仅限onebot v11)_
 
 </div>
 
